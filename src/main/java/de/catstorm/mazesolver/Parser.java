@@ -28,12 +28,16 @@ public class Parser
         return result;
     }
 
-    public static Node parseNodeHex(String hex)
+    public static void parseNodeHexId(String hex)
     {
-        var connectionsString = hex.substring(2);
         var id = (byte) Integer.parseInt(hex.substring(0, 2), 16);
-        //TODO: parse connections
-        return new Node(id, connections);
+        StoredNodes.INSTANCE.addNode(new Node(id));
+    }
+
+    //TODO: parse node connections
+    public static void parseNodeHexConnections(String hex)
+    {
+
     }
 
     private static String fileToHex(String path) throws IOException

@@ -8,10 +8,9 @@ public class Node
     byte id;
     Set<Connection> connections = new HashSet<>();
 
-    public Node(byte id, Set<Connection> connections)
+    public Node(byte id)
     {
         this.id = id;
-        this.connections.addAll(connections);
     }
 
     //Not sure why this will ever be needed
@@ -23,5 +22,10 @@ public class Node
                 throw new InvalidConnectionException("There are two nodes or two instances of the same node in a single set");
         }
         connections.add(new Connection(connectTo, cost));
+    }
+
+    public void addConnection(Connection connection)
+    {
+        connections.add(connection);
     }
 }
