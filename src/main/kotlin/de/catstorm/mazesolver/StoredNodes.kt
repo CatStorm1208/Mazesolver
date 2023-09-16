@@ -20,6 +20,7 @@ object StoredNodes
             if (node.id == id)
             {
                 node.addConnection(connection);
+                return;
             }
         }
     }
