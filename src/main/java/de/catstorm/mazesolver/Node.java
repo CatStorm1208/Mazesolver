@@ -14,11 +14,11 @@ public class Node
     }
 
     //Not sure why this will ever be needed
-    public void addConnection(Node connectTo, byte cost) throws InvalidConnectionException
+    public void addConnection(byte connectTo, byte cost) throws InvalidConnectionException
     {
         for (Connection connection : connections)
         {
-            if (connection.getConnectorId() == connectTo.id)
+            if (connection.getConnectorId() == connectTo)
                 throw new InvalidConnectionException("There are two nodes or two instances of the same node in a single set");
         }
         connections.add(new Connection(connectTo, cost));

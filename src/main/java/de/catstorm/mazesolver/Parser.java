@@ -37,7 +37,19 @@ public class Parser
     //TODO: parse node connections
     public static void parseNodeHexConnections(String hex)
     {
-
+        var id = (byte) Integer.parseInt(hex.substring(0, 2), 16);
+        var connectionString = hex.substring(2);
+        Set<String> connections = new HashSet<>();
+        for (var n = 0; n < connectionString.length(); n+=4)
+        {
+            connections.add(connectionString.substring(n, n+4));
+        }
+        for (var connection : connections)
+        {
+            StoredNodes.INSTANCE.addConnectionToNode(id, new Connection
+                ((byte) Integer.parseInt(connection.substring(0, 2), 16),
+                (byte) Integer.parseInt(connection.substring(2), 16)));
+        }
     }
 
     private static String fileToHex(String path) throws IOException
