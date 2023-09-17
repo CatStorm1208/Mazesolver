@@ -2,10 +2,10 @@ package de.catstorm.mazesolver;
 
 public class Connection
 {
-    byte connector;
+    Node connector;
     byte cost;
     
-    public Connection(byte connectTo, byte cost)
+    public Connection(Node connectTo, byte cost)
     {
         connector = connectTo;
         this.cost = cost;
@@ -13,6 +13,6 @@ public class Connection
 
     public byte getConnectorId()
     {
-        return connector;
+        return connector.id;
     }
 }

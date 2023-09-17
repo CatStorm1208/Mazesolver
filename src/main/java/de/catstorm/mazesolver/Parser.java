@@ -34,7 +34,6 @@ public class Parser
         StoredNodes.INSTANCE.addNode(new Node(id));
     }
 
-    //TODO: parse node connections
     public static void parseNodeHexConnections(String hex)
     {
         var id = (byte) Integer.parseInt(hex.substring(0, 2), 16);
@@ -47,7 +46,7 @@ public class Parser
         for (var connection : connections)
         {
             StoredNodes.INSTANCE.addConnectionToNode(id, new Connection
-                ((byte) Integer.parseInt(connection.substring(0, 2), 16),
+                (StoredNodes.INSTANCE.getNode((byte) Integer.parseInt(connection.substring(0, 2), 16)),
                 (byte) Integer.parseInt(connection.substring(2), 16)));
         }
     }
