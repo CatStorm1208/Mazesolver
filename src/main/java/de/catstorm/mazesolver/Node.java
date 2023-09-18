@@ -17,4 +17,14 @@ public class Node
     {
         connections.add(connection);
     }
+
+    public String toString()
+    {
+        String result = id + "";
+        for (var connection : connections)
+        {
+            result += "\n" + connection.getConnectorId() + " " + connection.cost;
+        }
+        return result;
+    }
 }

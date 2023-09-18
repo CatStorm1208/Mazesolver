@@ -51,6 +51,20 @@ public class Parser
         }
     }
 
+    public static Set<Node> parse(String path) throws IOException
+    {
+        Set<String> hexes = Parser.parseHexFile(path);
+        for (var hex : hexes)
+        {
+            Parser.parseNodeHexId(hex);
+        }
+        for (var hex : hexes)
+        {
+            Parser.parseNodeHexConnections(hex);
+        }
+        return StoredNodes.INSTANCE.getAllNodes();
+    }
+
     private static String fileToHex(String path) throws IOException
     {
         InputStream is = new FileInputStream(path);
