@@ -27,4 +27,13 @@ public class Node
         }
         return result;
     }
+
+    public Connection getConnectionByConnectorId(byte id) throws InvalidConnectionException
+    {
+        for (var connection : connections)
+        {
+            if (connection.getConnectorId() == id) return connection;
+        }
+        throw new InvalidConnectionException("The connection from " + this.id + " to " + id + " doesn't exist");
+    }
 }
