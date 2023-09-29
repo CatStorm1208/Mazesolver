@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class NodeWithNumerator
 {
     public final byte id;
-    private int numerator = 0;
+    private int numerator = -1;
     public ArrayList<Byte> connectionIds;
 
     public NodeWithNumerator(byte id)
@@ -32,5 +32,10 @@ public class NodeWithNumerator
     public int getMaxNumerator()
     {
         return connectionIds.size() - 1; //Conversion from true size to index size
+    }
+
+    public int getNumerator()
+    {
+        return numerator;
     }
 }

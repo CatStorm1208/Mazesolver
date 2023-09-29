@@ -22,7 +22,7 @@ object StoredNodes
                 return node;
             }
         }
-        throw InvalidNodeException("The node with id " + id.toString() + "does not exist");
+        throw InvalidNodeException("The node with id $id does not exist");
     }
 
     fun getAllNodes(): Set<Node>
@@ -40,6 +40,6 @@ object StoredNodes
                 return;
             }
         }
-        throw InvalidNodeException("The node with id " + id.toString() + "does not exist");
+        throw InvalidNodeException("The node with id $id does not exist");
     }
 }
