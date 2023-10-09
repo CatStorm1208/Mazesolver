@@ -29,6 +29,11 @@ public class NodeWithNumerator
         return null;
     }
 
+    public Node peekNext()
+    {
+        return StoredNodes.INSTANCE.getNode(connectionIds.get(numerator + 1));
+    }
+
     public int getMaxNumerator()
     {
         return connectionIds.size() - 1; //Conversion from true size to index size

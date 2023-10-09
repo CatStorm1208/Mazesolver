@@ -62,7 +62,7 @@ public class Parser
         {
             Parser.parseNodeHexConnections(hex);
         }
-        return StoredNodes.INSTANCE.getAllNodes();
+        return StoredNodes.INSTANCE.getAllNodes(); //Idk why we would ever need this
     }
 
     private static String fileToHex(String path) throws IOException

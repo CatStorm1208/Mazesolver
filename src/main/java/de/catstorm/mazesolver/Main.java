@@ -37,9 +37,18 @@ public class Main
                 return;
             }
         }
-        else
+        else if (StoredNodes.INSTANCE.getAllNodes().size() > returnStack.size() && top.peekNext().id != -16 && !checkReturnStack(top.peekNext().id) && top.getNumerator() <= top.getMaxNumerator())
         {
             returnStack.push(new NodeWithNumerator(top.next().id));
+        }
+        else if ()
+        {
+            //TODO: check if the current id is a dead end by checking if all ids which the current can connect to
+            //  are already in the stack and if yes pop the stack
+        }
+        else
+        {
+            top.next();
         }
         loop();
     }
@@ -56,5 +65,19 @@ public class Main
                 .getConnectionByConnectorId(nodes.get(i-1).id).cost; //Was I drunk when I wrote this?
         }
         System.out.println("cost: " + cost);
+    }
+
+    private static boolean checkReturnStack(byte id)
+    {
+        for (var node : returnStack)
+        {
+            if (id == node.id) return true;
+        }
+        return false;
+    }
+
+    private static void omega()
+    {
+        System.exit(0);
     }
 }
