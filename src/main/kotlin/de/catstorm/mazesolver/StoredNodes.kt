@@ -1,5 +1,7 @@
 package de.catstorm.mazesolver
 
+import java.util.Stack
+
 //Kotlin in order to maximize pain
 //But seriously, I had to use Kotlin
 //because I needed this specific type of object
@@ -41,5 +43,31 @@ object StoredNodes
             }
         }
         throw InvalidNodeException("The node with id $id does not exist");
+    }
+
+    fun checkForAllNodes(returnStack: Stack<NodeWithNumerator>): Boolean
+    {
+        return try
+        {
+            var previous: Set<Byte> = HashSet();
+            returnStack.forEach()
+            {
+                previous = previous.plus(it.id);
+                getNode(it.id);
+                val store = it.id;
+                previous.forEach()
+                { it1 ->
+                    if (store == it1)
+                    {
+                        return false; //I give up
+                    }
+                }
+            }
+            true;
+        }
+        catch (e: InvalidNodeException)
+        {
+            false;
+        }
     }
 }
