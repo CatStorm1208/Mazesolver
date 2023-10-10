@@ -3,9 +3,6 @@ package de.catstorm.mazesolver
 import java.util.Stack
 
 //Kotlin in order to maximize pain
-//But seriously, I had to use Kotlin
-//because I needed this specific type of object
-//which is only available in Kotlin
 object StoredNodes
 {
     private var nodes: Set<Node> = HashSet();

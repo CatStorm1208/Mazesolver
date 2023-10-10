@@ -31,7 +31,8 @@ public class NodeWithNumerator
 
     public Node peekNext()
     {
-        return StoredNodes.INSTANCE.getNode(connectionIds.get(numerator + 1));
+        if (numerator <= getMaxNumerator()) return StoredNodes.INSTANCE.getNode(connectionIds.get(numerator + 1));
+        else return null;
     }
 
     public int getMaxNumerator()
