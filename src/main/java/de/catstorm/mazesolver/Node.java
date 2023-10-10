@@ -18,6 +18,7 @@ public class Node
         connections.add(connection);
     }
 
+    @Override
     public String toString()
     {
         String result = id + "";
@@ -35,5 +36,12 @@ public class Node
             if (connection.getConnectorId() == id) return connection;
         }
         throw new InvalidConnectionException("The connection from " + this.id + " to " + id + " doesn't exist");
+    }
+
+    @Override
+    @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
+    public boolean equals(Object obj)
+    {
+        return ((Node) obj).id == this.id;
     }
 }

@@ -1,7 +1,5 @@
 package de.catstorm.mazesolver
 
-import java.util.Stack
-
 //Kotlin in order to maximize pain
 object StoredNodes
 {
@@ -42,29 +40,8 @@ object StoredNodes
         throw InvalidNodeException("The node with id $id does not exist");
     }
 
-    fun checkForAllNodes(returnStack: Stack<NodeWithNumerator>): Boolean
+    fun getSize(): Int
     {
-        return try
-        {
-            var previous: Set<Byte> = HashSet();
-            returnStack.forEach()
-            {
-                previous = previous.plus(it.id);
-                getNode(it.id);
-                val store = it.id;
-                previous.forEach()
-                { it1 ->
-                    if (store == it1)
-                    {
-                        return false; //I give up
-                    }
-                }
-            }
-            true;
-        }
-        catch (e: InvalidNodeException)
-        {
-            false;
-        }
+        return nodes.size;
     }
 }
