@@ -1,18 +1,15 @@
 package de.catstorm.mazesolver;
 
-public class Connection
-{
+public class Connection {
     Node connector;
     byte cost;
-    
-    public Connection(Node connectTo, byte cost)
-    {
+
+    public Connection(Node connectTo, byte cost) {
         connector = connectTo;
         this.cost = cost;
     }
 
-    public byte getConnectorId()
-    {
+    public byte getConnectorId() {
         return connector.id;
     }
 }
