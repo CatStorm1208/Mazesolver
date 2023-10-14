@@ -6,7 +6,6 @@ import java.util.Stack;
 
 //For anyone reading this who isn't me: Have fun with the completely undocumented code
 //TODO: make program run without debug mode
-//TODO: make final jar build work
 public class Main {
     public static Stack<NumeratedNode> returnStack = new Stack<>();
 
