@@ -2,6 +2,7 @@ package de.catstorm.mazesolver;
 
 import java.io.IOException;
 import java.util.EmptyStackException;
+import java.util.Scanner;
 import java.util.Stack;
 
 //For anyone reading this who isn't me: Have fun with the completely undocumented code
@@ -68,6 +69,9 @@ public class Main {
     }
 
     private static void omega() {
+        var scanner = new Scanner(System.in);
+        System.out.print("Press ENTER to end program");
+        scanner.nextLine();
         System.exit(0);
     }
 }
